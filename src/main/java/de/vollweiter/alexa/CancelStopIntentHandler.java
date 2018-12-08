@@ -11,29 +11,27 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static com.amazon.ask.request.Predicates.intentName;
 
-public class CancelStopIntentHandler implements RequestHandler
-{
-    @Override public boolean canHandle( HandlerInput handlerInput )
-    {
+public class CancelStopIntentHandler implements RequestHandler {
+    @Override
+    public boolean canHandle(HandlerInput handlerInput) {
         return handlerInput.matches(intentName("AMAZON.StopIntent").or(intentName("AMAZON.CancelIntent")));
     }
 
-    @Override public Optional<Response> handle( HandlerInput handlerInput )
-    {
+    @Override
+    public Optional<Response> handle(HandlerInput handlerInput) {
         String speechText = getRandomResponse();
 
         return handlerInput.getResponseBuilder()
-        .withSpeech(speechText)
-        .withSimpleCard("Dominic", speechText)
-        .withReprompt(speechText)
-        .build();
+                .withSpeech(speechText)
+                .withSimpleCard("Dominic", speechText)
+                .build();
     }
 
     private String getRandomResponse() {
-        List<String> possibleAnswers = new ArrayList<>(  );
-        possibleAnswers.add( "Jetzt verzieh dich" );
-        possibleAnswers.add( "Ist auch besser so" );
-        int randomNum = ThreadLocalRandom.current().nextInt( 0, possibleAnswers.size() + 1);
-        return possibleAnswers.get( randomNum );
+        List<String> possibleAnswers = new ArrayList<>();
+        possibleAnswers.add("Jetzt verzieh dich");
+        possibleAnswers.add("Ist auch besser so");
+        int randomNum = ThreadLocalRandom.current().nextInt(0, possibleAnswers.size() + 1);
+        return possibleAnswers.get(randomNum);
     }
 }
