@@ -39,6 +39,14 @@ public class LaunchRequestHandler implements RequestHandler {
         possibleAnswers.add("Mit dir verlieren wir wenigstens niemand wertvolles!");
         possibleAnswers.add("Was interessiert mich dem sein gelaber");
         possibleAnswers.add("Das ist unschaetzbar - aber nicht wertvoll gemeint!");
+        possibleAnswers.add("Ich goenn mir den langen Stab, weil ich auf lange Staebe stehe");
+        possibleAnswers.add("Du bist wie ein einlagiges Toilettenpapier. Reicht zum Arsch abwischen, mehr aber auch nicht");
+        possibleAnswers.add("Jeder will doch so eine schwarze Schlange");
+        possibleAnswers.add("Na mein Butterkeks, darf ich dich zerbroeseln?");
+        possibleAnswers.add("Manche trainieren nur Bizeps, ich trainiere Schließmuskel!");
+        possibleAnswers.add("Prost ihr Saecke, Prost du Schamlippe!");
+        possibleAnswers.add("Ich koche gerne und bei dir wuerde ich auch mal gerne meinen Spargel reinstecken!");
+        possibleAnswers.add("Die Schlange windet sich schon!");
         int randomNum = ThreadLocalRandom.current().nextInt(0, possibleAnswers.size());
         return possibleAnswers.get(randomNum);
     }
