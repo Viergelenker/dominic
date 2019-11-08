@@ -47,6 +47,7 @@ public class LaunchRequestHandler implements RequestHandler {
         possibleAnswers.add("Prost ihr Saecke, Prost du Schamlippe!");
         possibleAnswers.add("Ich koche gerne und bei dir wuerde ich auch mal gerne meinen Spargel reinstecken!");
         possibleAnswers.add("Die Schlange windet sich schon!");
+        possibleAnswers.add("Hoch die Haende, Samenspende");
         int randomNum = ThreadLocalRandom.current().nextInt(0, possibleAnswers.size());
         return possibleAnswers.get(randomNum);
     }
